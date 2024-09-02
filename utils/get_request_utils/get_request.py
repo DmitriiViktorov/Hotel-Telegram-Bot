@@ -1,3 +1,5 @@
+from requests import request
+
 from config_data.config import RAPID_API_KEY
 import requests
 from states.user_data import *
@@ -136,11 +138,11 @@ def get_hotel_info(i_hotel_id: str):
 	:return: Сформированные данные для запроса к API Hotels.
 	"""
 
-	url = "https://hotels4.p.rapidapi.com/properties/v2/detail"
+	url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
 	payload = {
 		"currency": "USD",
 		"eapid": 1,
-		"locale": "ru_RU",
+		"locale": "en_US",
 		"siteId": 300000001,
 		"propertyId": i_hotel_id
 	}

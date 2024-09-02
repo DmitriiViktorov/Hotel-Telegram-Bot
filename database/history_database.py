@@ -51,7 +51,8 @@ def get_search_parameters(user: User, request: str):
 			max_cost=user.max_price,
 			guest_rating=user.guestRating,
 			stars=user.stars,
-			text_request=request
+			# text_request=request
+			text_request=''
 		)
 		if Visitor.select().where(Visitor.user_id == user.user_id):
 			update = Visitor.update({Visitor.last_request_id: search.id,

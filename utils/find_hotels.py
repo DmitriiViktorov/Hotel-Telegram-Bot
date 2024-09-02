@@ -195,7 +195,6 @@ def set_full_request(message: Message, user):
 				total_cost = round(i_hotel_cost * (user.departure_date - user.arrival_date).days, 2)
 
 				hotel_info = get_request.get_hotel_info(i_hotel_id)
-				print(hotel_info)
 				if isinstance(hotel_info, str):
 					bot.send_message(message.chat.id, hotel_info)
 				else:
